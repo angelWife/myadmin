@@ -1,0 +1,145 @@
+@import 'base.less';
+
+a {
+  cursor: pointer;
+
+  &:hover {
+    color: @red_orange  !important;
+  }
+  &.picBox{
+    display: block;
+  }
+}
+html,body{
+  height:100%;
+  width: 100%;
+}
+
+/*通用调整*/
+.container{
+  margin:0;
+  padding:0;
+  height:100% !important;
+  width: 100% !important;
+  max-width:100% !important;
+  .row{
+    margin:0;
+    padding:0;
+  }
+  .m_left{
+    width: 240px;
+    height:100%;
+    background: #222;
+    .logo{
+      height:50px;
+      line-height: 50px;
+      text-align: center;
+      .boxShadow(0,1px,3px,rgba(0,0,0,0.7));
+      color:@white;
+      font-size:16px;
+      font-weight: 600;
+    }
+    .menuBox{
+      min-height:600px;
+      overflow-y: auto;
+    }
+  }
+  .m_right{
+    padding:0;
+    margin:0;
+    .head{
+      height:50px;
+      background: @gray_f5;
+      .menuClick{
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+    .treeBox{
+      height:40px;
+      border:1px solid @gray_e6;
+      .boxShadow(0,3px,3px,rgba(0,0,0,0.1));
+    }
+  }
+}
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*head样式*/
+
+
+/*字体颜色*/
+.orange {
+  color: @red_orange;
+}
+
+.red {
+  color: @red;
+}
+
+.c333 {
+  color: @gray_33;
+}
+
+.c666 {
+  color: @gray_66;
+}
+
+.c999 {
+  color: @gray_99;
+}
+
+/*字体大小*/
+.fs12 {
+  font-size: 12px;
+}
+
+.fs13 {
+  font-size: 13px;
+}
+
+.fs14 {
+  font-size: 14px;
+}
+
+.fs15 {
+  font-size: 15px;
+}
+
+.fs16 {
+  font-size: 16px;
+}
+
+.fs18 {
+  font-size: 18px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fw600{
+  font-weight:600;
+}
+.fw500{
+  font-weight:500;
+}

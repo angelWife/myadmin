@@ -1,0 +1,130 @@
+@charset 'utf-8';
+a {
+  cursor: pointer;
+}
+a:hover {
+  color: #FF4400 !important;
+}
+a.picBox {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+/*通用调整*/
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.container .row {
+  margin: 0;
+  padding: 0;
+}
+.container .m_left {
+  width: 240px;
+  height: 100%;
+  background: #222;
+}
+.container .m_left .logo {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+.container .m_left .menuBox {
+  min-height: 600px;
+  overflow-y: auto;
+}
+.container .m_right {
+  padding: 0;
+  margin: 0;
+}
+.container .m_right .head {
+  height: 50px;
+  background: #f5f5f5;
+}
+.container .m_right .head .menuClick {
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .m_right .treeBox {
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+/*head样式*/
+/*字体颜色*/
+.orange {
+  color: #FF4400;
+}
+.red {
+  color: #FF0000;
+}
+.c333 {
+  color: #333333;
+}
+.c666 {
+  color: #666666;
+}
+.c999 {
+  color: #999999;
+}
+/*字体大小*/
+.fs12 {
+  font-size: 12px;
+}
+.fs13 {
+  font-size: 13px;
+}
+.fs14 {
+  font-size: 14px;
+}
+.fs15 {
+  font-size: 15px;
+}
+.fs16 {
+  font-size: 16px;
+}
+.fs18 {
+  font-size: 18px;
+}
+.fs20 {
+  font-size: 20px;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw500 {
+  font-weight: 500;
+}
