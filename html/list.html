@@ -1,0 +1,101 @@
+<div id="userList" class="listModal">
+  <div class="topOper row">
+    <div class="col-md-6">
+      <button class="btn btn-primary">搜索</button>
+    </div>
+    <div class="col-md-6 text-right">
+      <button class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>新增</button>
+    </div>
+  </div>
+  <div class="searchBox form-horizontal">
+    <div class="row">
+      <div class="col-md-4 row align-items-center">
+        <div class="control-label col-md-3 text-right">用户名</div>
+        <div class="input col-md-8">
+          <input class="form-control" placeholder="请输入用户名" />
+        </div>
+      </div>
+      <div class="col-md-4 row align-items-center">
+        <div class="control-label col-md-3 text-right">类别</div>
+        <div class="input col-md-8">
+          <select class="form-control">
+            <option>请选择</option>
+            <option>请选择</option>
+            <option>请选择</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-4 row align-items-center">
+        <div class="control-label col-md-3 text-right">起始时间</div>
+        <div class="input col-md-8">
+          <input class="form-control" placeholder="请选择其实时间" id="timerStart" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tableBox">
+    <table class="layui-hide" id="userTable"></table>
+  </div>
+</div>
+<script>
+  $(function() {
+    layui.use(['laydate', 'table'], function() {
+      var laydate = layui.laydate;
+      var table = layui.table;
+
+      laydate.render({
+        elem: '#timerStart'
+      });
+
+      table.render({
+        elem: '#userTable',
+        url: 'https://www.layui.com/demo/table/user',
+        cols: [
+          [{
+            field: 'id',
+            width: 80,
+            title: 'ID',
+            sort: true
+          }, {
+            field: 'username',
+            width: 80,
+            title: '用户名'
+          }, {
+            field: 'sex',
+            width: 80,
+            title: '性别',
+            sort: true
+          }, {
+            field: 'city',
+            width: 80,
+            title: '城市'
+          }, {
+            field: 'sign',
+            title: '签名',
+            minWidth: 150
+          }, {
+            field: 'experience',
+            width: 80,
+            title: '积分',
+            sort: true
+          }, {
+            field: 'score',
+            width: 80,
+            title: '评分',
+            sort: true
+          }, {
+            field: 'classify',
+            width: 80,
+            title: '职业'
+          }, {
+            field: 'wealth',
+            width: 135,
+            title: '财富',
+            sort: true
+          }]
+        ],
+        page: true
+      });
+    });
+  });
+</script>

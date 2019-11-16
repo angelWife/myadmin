@@ -1,0 +1,43 @@
+@charset 'utf-8';
+.login .container {
+  background: #EAEBEC;
+}
+.login .loginMian {
+  height: 100%;
+}
+.login .loginForm {
+  width: 30%;
+  background: #fff;
+  min-width: 500px;
+  border-radius: 0.4em;
+  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  min-height: 300px;
+  padding: 0 100px;
+}
+.login .loginForm .logo {
+  padding: 30px;
+  text-align: center;
+  font-size: 22px;
+  color: #999999;
+}
+.login .loginForm .logo img {
+  width: auto;
+  height: 40px;
+}
+.login .loginForm .input {
+  margin-bottom: 15px;
+}
+.login .loginForm .input input {
+  height: 40px;
+  line-height: 40px;
+}
+.login .btnBox {
+  margin: 20px 0 50px;
+}
+.login .btnBox button {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+}

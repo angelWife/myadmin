@@ -4,66 +4,382 @@ a {
   cursor: pointer;
 
   &:hover {
-    color: @red_orange  !important;
+    color: @red_orange;
+    text-decoration: none;
   }
-  &.picBox{
+
+  &.picBox {
     display: block;
   }
 }
-html,body{
-  height:100%;
+
+html,
+body {
+  height: 100%;
   width: 100%;
+  font-size: 14px;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+button i{
+  font-size:12px;
+  margin-right:5px;
 }
 
 /*通用调整*/
-.container{
-  margin:0;
-  padding:0;
-  height:100% !important;
+.container {
+  margin: 0;
+  padding: 0;
+  height: 100% !important;
   width: 100% !important;
-  max-width:100% !important;
-  .row{
-    margin:0;
-    padding:0;
+  max-width: 100% !important;
+  overflow: hidden;
+
+  .row {
+    margin: 0;
+    padding: 0;
   }
-  .m_left{
+
+  .m_left {
     width: 240px;
-    height:100%;
+    height: 100%;
     background: #222;
-    .logo{
-      height:50px;
+
+    .logo {
+      height: 50px;
       line-height: 50px;
       text-align: center;
-      .boxShadow(0,1px,3px,rgba(0,0,0,0.7));
-      color:@white;
-      font-size:16px;
+      .boxShadow(0, 1px, 3px, rgba(0, 0, 0, 0.7));
+      color: @white;
+      font-size: 16px;
       font-weight: 600;
     }
-    .menuBox{
-      min-height:600px;
+
+    .menuBox {
+      min-height: 600px;
       overflow-y: auto;
+
+      dl {
+        font-size: 14px;
+        margin: 0;
+      }
+
+      dt {
+        position: relative;
+
+        a {
+          color: @gray_d6;
+          display: block;
+          height: 40px;
+          line-height: 37px;
+          border-left: 4px solid #222;
+          padding-left: 37px;
+          overflow: hidden;
+
+          &:hover {
+            border-color: @red_orange;
+            color: @white;
+          }
+
+          &::before {
+            position: absolute;
+            line-height: 40px;
+            height: 100%;
+            left: 10px;
+            margin-right: 10px;
+          }
+        }
+
+        i {
+          position: absolute !important;
+          cursor: pointer;
+          height: 40px;
+          line-height: 40px;
+          font-size: 12px;
+          // width: 30px;
+          right: 20px;
+          top: 0;
+          color: @white;
+          .transition(all, 0.3s);
+          .transform(rotate(0deg));
+
+          &.rotate {
+            .transform(rotate(180deg));
+          }
+        }
+
+        &.active {
+          a {
+            color: #fff;
+            background: @red_orange;
+            border-color: @red_orange;
+          }
+        }
+      }
+
+      dd {
+        margin: 0;
+        display: none;
+        background: @gray_33;
+        padding: 6px 0;
+
+        a {
+          display: block;
+          color: @gray_d6;
+          line-height: 40px;
+          padding-left: 39px;
+
+          &:hover {
+            color: @white;
+            text-decoration: none;
+          }
+
+          &.active {
+            color: #fff;
+            background: @red_orange;
+          }
+        }
+
+      }
     }
   }
-  .m_right{
-    padding:0;
-    margin:0;
-    .head{
-      height:50px;
+
+  .showIcon {
+    .menuBox {
+      overflow: hidden;
+    }
+
+  }
+
+  .m_right {
+    padding: 0;
+    margin: 0;
+
+    .head {
+      height: 50px;
       background: @gray_f5;
-      .menuClick{
+
+      .menuClick {
         width: 50px;
         line-height: 50px;
         text-align: center;
         cursor: pointer;
+
+        i {
+          color: @gray_99;
+        }
+
+        &:hover i {
+          color: @blue;
+        }
+      }
+
+      .headMenu {
+        float: right;
+
+        li {
+          float: left;
+
+          >a {
+            display: inline-block;
+            line-height: 50px;
+            width: 50px;
+            text-align: center;
+            color: @gray_66;
+
+            &:hover {
+              color: @red_orange;
+            }
+          }
+
+          &.more {
+            position: relative;
+            padding: 0 20px;
+
+            >a {
+              width: auto;
+              padding-right: 20px;
+              line-height: 46px;
+
+              &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 12px;
+              }
+            }
+
+            >div {
+              position: absolute;
+              z-index: 10;
+              display: none;
+              width: 150px;
+              background: @white;
+              .boxShadow(0, 0, 5px, rgba(0, 0, 0, 0.2));
+              top: 50px;
+              right: 0;
+              padding: 5px;
+
+              a {
+                display: block;
+                line-height: 30px;
+                padding: 0 20px;
+
+                &:hover {
+                  color: @red_orange;
+                }
+              }
+            }
+          }
+        }
+
+
       }
     }
-    .treeBox{
-      height:40px;
-      border:1px solid @gray_e6;
-      .boxShadow(0,3px,3px,rgba(0,0,0,0.1));
+
+    .treeBox {
+      height: 40px;
+      border: 1px solid @gray_e6;
+      overflow: hidden;
+      .boxShadow(0, 3px, 3px, rgba(0, 0, 0, 0.1));
+      position: relative;
+
+      .treeList {
+        position: absolute;
+        width: calc(100% - 82px);
+        left: 40px;
+        top: 0px;
+        height: 40px;
+
+        .treeMain {
+          height: 100%;
+          position: absolute;
+          left: 0;
+          overflow: hidden;
+
+          a {
+            float: left;
+            height: 100%;
+            line-height: 36px;
+            padding: 0 20px 0 10px;
+            box-sizing: border-box;
+            width: 100px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            position: relative;
+            text-align: center;
+            border-top: 2px solid @white;
+            border-right: 1px solid @gray_e6;
+            color: @gray_66;
+
+            i {
+              position: absolute;
+              height: 20px;
+              width: 20px;
+              color: @gray_99;
+              line-height: 20px;
+              font-style: normal;
+              right: 3px;
+              font-size: 12px;
+              top: 8px;
+
+              &:hover {
+                color: @red_orange;
+                font-weight: 600;
+              }
+            }
+
+            &.active {
+              border-top-color: @dark_blue;
+            }
+          }
+        }
+      }
+
+      .home {
+        width: 40px;
+        line-height: 36px;
+        text-align: center;
+        border-right: 1px solid @gray_e6;
+        vertical-align: top;
+        color: @gray_66;
+        cursor: pointer;
+        position: absolute;
+        border-top: 2px solid @white;
+        top: 0;
+        left: 0;
+
+        &:hover {
+          color: @red;
+        }
+
+        &.active {
+          border-top-color: @dark_blue;
+        }
+      }
+
+      .closeAll {
+        width: 40px;
+        line-height: 38px;
+        text-align: center;
+        border-left: 1px solid @gray_d6;
+        vertical-align: top;
+        color: @gray_66;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &:hover {
+          color: @red;
+        }
+      }
+    }
+
+    .main {
+      height: calc(100% - 90px);
+      overflow-y: scroll;
+      overflow-x: auto;
     }
   }
 }
+
+.topOper {
+  margin-top: 15px !important;
+}
+
+.searchBox {
+  margin: 15px;
+  padding: 20px 0;
+  border: 1px solid @gray_e6;
+}
+
+.tableBox{
+  margin:15px;
+}
+
+.addFormModal{
+  padding:30px 0;
+ .row{
+   margin-top:20px;
+ }
+ .form-textarea{
+   height:100px;
+ }
+ .btnBox{
+   margin-top:30px;
+   text-align: right;
+   button{
+     width: 120px;
+   }
+ }
+}
+
 .left {
   float: left !important;
 }
@@ -82,6 +398,10 @@ html,body{
 
 .text-center {
   text-align: center;
+}
+
+.pd15{
+  padding:15px;
 }
 
 /*head样式*/
@@ -137,9 +457,10 @@ html,body{
   font-size: 20px;
 }
 
-.fw600{
-  font-weight:600;
+.fw600 {
+  font-weight: 600;
 }
-.fw500{
-  font-weight:500;
+
+.fw500 {
+  font-weight: 500;
 }

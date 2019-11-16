@@ -1,0 +1,93 @@
+<div id="userAdd" class="addFormModal form-horizontal">
+  <form>
+    <div class="row align-items-center">
+      <div class="control-label col-md-3 text-right">姓名</div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="请输入用户名" />
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="control-label col-md-3 text-right">性别</div>
+      <div class="col-md-4">
+        <select class="form-control">
+          <option>请选择</option>
+          <option>男</option>
+          <option>女</option>
+        </select>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="control-label col-md-3 text-right">出生年月</div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="请选择日期" id="birthdayDate" />
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="control-label col-md-3 text-right">上传图片</div>
+      <div class="col-md-4">
+        <div class="layui-upload">
+          <button type="button" class="layui-btn layui-btn-sm" id="upLoadPic">上传图片</button>
+          <div class="layui-upload-list layui-inline">
+            <img class="layui-upload-img" id="picBox">
+            <p id="demoText"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="control-label col-md-3 text-right">备注</div>
+      <div class="col-md-4">
+        <textarea class="form-textarea form-control" placeholder="请输入"></textarea>
+      </div>
+    </div>
+    <div class="row align-items-center">
+      <div class="control-label col-md-3 text-right"></div>
+      <div class="col-md-4">
+        <div class="btnBox">
+          <button class="btn btn-primary" type="submit">提交</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+<script>
+  $(function() {
+    layui.use(['laydate', 'upload'], function() {
+      var laydate = layui.laydate;
+      var upload = layui.upload;
+
+      laydate.render({
+        elem: '#birthdayDate'
+      });
+      //普通图片上传
+      var uploadInst = upload.render({
+        elem: '#upLoadPic',
+        url: '/upload/',
+        before: function(obj) {
+          //预读本地文件示例，不支持ie8
+          obj.preview(function(index, file, result) {
+            $('#picBox').attr('src', result); //图片链接（base64）
+          });
+        },
+        done: function(res) {
+          //如果上传失败
+          if (res.code > 0) {
+            return layer.msg('上传失败');
+          }
+          //上传成功
+        },
+        error: function() {
+          //演示失败状态，并实现重传
+          var demoText = $('#demoText');
+          demoText.html(
+            '<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>'
+          );
+          demoText.find('.demo-reload').on('click', function() {
+            uploadInst.upload();
+          });
+        }
+      });
+    });
+  });
+</script>
