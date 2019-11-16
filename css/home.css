@@ -1,0 +1,189 @@
+@charset 'utf-8';
+.home_head {
+  height: 50px;
+  line-height: 50px;
+}
+.home_head ul {
+  overflow: hidden;
+}
+.home_head ul li {
+  float: left;
+  padding: 0 25px;
+}
+.home_head ul li a {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 50px;
+  padding: 0 5px;
+  border-bottom: 2px solid #ffffff;
+  color: #666666;
+}
+.home_head ul li a.active {
+  border-color: #FF4400;
+  color: #FF4400;
+}
+.home_head ul li a:hover {
+  color: #FF4400;
+}
+.shop_modal {
+  padding: 15px;
+  margin: 15px;
+  background: #f5f5f5;
+}
+.shop_modal .pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.shop_modal .pic img {
+  width: 100%;
+}
+.shop_modal .name {
+  line-height: 50px;
+}
+.shop_modal .name .mark {
+  display: inline-block;
+  padding: 3px 10px;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 0.2em;
+  margin-left: 20px;
+  line-height: 1.5;
+}
+.shop_modal .name .orange {
+  background: #f78e1e;
+}
+.shop_modal .name .green {
+  background: #39b54a;
+}
+.shop_modal .name .gray {
+  color: #999999;
+  background: #e6e6e6;
+}
+.shop_modal .name .jingling {
+  display: inline-block;
+  position: relative;
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  color: #fff;
+  background: #0099ff;
+  font-size: 12px;
+}
+.shop_modal .item {
+  margin-bottom: 5px;
+}
+.shop_modal .item span {
+  display: inline-block;
+  padding-right: 50px;
+}
+.shop_modal .edit {
+  text-align: right;
+}
+.modal_one .operShop {
+  padding: 10px;
+}
+.modal_one .operShop .col {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  background: #e6e6e6;
+  line-height: 100px;
+  text-align: center;
+  font-size: 16px;
+}
+.modal_one .messageList .item {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f5f5f5;
+  text-align: justify;
+}
+.modal_one .messageList .item .text {
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #d6d6d6;
+}
+.modal_one .messageList .item .name {
+  overflow: hidden;
+  padding-top: 10px;
+}
+.modal_one .noticeList {
+  overflow: hidden;
+  padding: 10px 0 ;
+}
+.modal_one .noticeList li {
+  width: 50%;
+  float: left;
+  line-height: 30px;
+  font-size: 13px;
+  padding: 0 20px;
+}
+.modal_one .noticeList li:nth-child(2n-1) {
+  border-right: 1px dashed #d6d6d6;
+}
+.modal_one .noticeList li a {
+  float: left;
+  width: calc(100% - 100px);
+  color: #666666;
+}
+.modal_one .noticeList li a:hover {
+  color: #FF4400;
+}
+.modal_one .noticeList li text {
+  float: right;
+  width: 80px;
+  color: #999999;
+}
+.comTabBox {
+  height: 40px;
+  line-height: 40px;
+}
+.comTabBox .more {
+  float: right;
+}
+.comTabBox .item {
+  float: left;
+  padding: 0 20px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 2px solid #ffffff;
+  cursor: pointer;
+}
+.comTabBox .item.active {
+  border-color: #FF4400;
+  font-weight: 600;
+}
+.comBoxModal .boxItem {
+  display: none;
+}
+.comBoxModal .boxItem.boxShow {
+  display: block;
+}
+.modal_two {
+  height: 40px;
+  line-height: 40px;
+  margin: 15px;
+  padding: 0 20px;
+  background: #f5f5f5;
+  border: 1px solid #d6d6d6;
+}
+.modal_three {
+  margin: 15px;
+}
+.comTitle {
+  height: 40px;
+  line-height: 40px;
+}
+.comTitle .text {
+  font-size: 16px;
+  font-weight: 600;
+}
+.comTitle .more {
+  float: right;
+}

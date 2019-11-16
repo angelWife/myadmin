@@ -46,6 +46,8 @@ button i {
   height: 50px;
   line-height: 50px;
   text-align: center;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   color: #ffffff;
@@ -92,10 +94,22 @@ button i {
   right: 20px;
   top: 0;
   color: #ffffff;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
   transition: all 0.3s linear 0s;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg);
 }
 .container .m_left .menuBox dt i.rotate {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .container .m_left .menuBox dt.active a {
@@ -146,6 +160,27 @@ button i {
 .container .m_right .head .menuClick:hover i {
   color: #0099ff;
 }
+.container .m_right .head .headBar {
+  float: left;
+  overflow: hidden;
+  margin-left: 50px;
+}
+.container .m_right .head .headBar a {
+  display: inline-block;
+  height: 50px;
+  line-height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #666666;
+  border-top: 2px solid #f5f5f5;
+}
+.container .m_right .head .headBar a.active {
+  border-color: #FF4400;
+  color: #FF4400;
+}
+.container .m_right .head .headBar a:hover {
+  border-color: #FF4400;
+}
 .container .m_right .head .headMenu {
   float: right;
 }
@@ -183,6 +218,8 @@ button i {
   display: none;
   width: 150px;
   background: #ffffff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   top: 50px;
@@ -201,6 +238,8 @@ button i {
   height: 40px;
   border: 1px solid #e6e6e6;
   overflow: hidden;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -287,9 +326,9 @@ button i {
   color: #FF0000;
 }
 .container .m_right .main {
-  height: calc(100% - 90px);
+  height: calc(100vh - 90px);
+  overflow: hidden;
   overflow-y: scroll;
-  overflow-x: auto;
 }
 .topOper {
   margin-top: 15px !important;
@@ -343,6 +382,9 @@ button i {
 }
 .red {
   color: #FF0000;
+}
+.green {
+  color: #39b54a;
 }
 .c333 {
   color: #333333;

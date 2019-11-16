@@ -177,7 +177,27 @@ button i{
           color: @blue;
         }
       }
-
+      .headBar{
+        float:left;
+        overflow: hidden;
+        margin-left:50px;
+        a{
+          display: inline-block;
+          height:50px;
+          line-height: 48px;
+          padding:0 20px;
+          font-size:16px;
+          color:@gray_66;
+          border-top:2px solid @gray_f5;
+          &.active{
+            border-color:@red_orange;
+            color:@red_orange;
+          }
+          &:hover{
+            border-color:@red_orange;
+          }
+        }
+      }
       .headMenu {
         float: right;
 
@@ -342,9 +362,9 @@ button i{
     }
 
     .main {
-      height: calc(100% - 90px);
+      height: calc(100vh - 90px);
+      overflow: hidden;
       overflow-y: scroll;
-      overflow-x: auto;
     }
   }
 }
@@ -414,6 +434,10 @@ button i{
 
 .red {
   color: @red;
+}
+
+.green{
+  color:@green;
 }
 
 .c333 {
