@@ -1,6 +1,6 @@
 $(function() {
   //加载首页
-  loadHtml();
+  loadHtml('mainIframe');
 
   // 菜单缩小
   $("#menuClick").on("click", function() {
@@ -68,7 +68,7 @@ $(function() {
   });
 
   $("#navHome").click(function() {
-    loadHtml();
+    loadHtml('mainIframe');
     $(this).addClass('active');
     $("#headTree a").removeClass('active');
   })
@@ -104,12 +104,12 @@ function addTab(title, href) {
     addTab(title, href);
   });
 
-  loadHtml(href)
+  loadHtml('mainIframe',href);
 
 }
 
-function loadHtml(url = 'html/home.html', data, callback) {
-  $("#iframe").load(url);
+function loadHtml(dom,url = 'html/home.html', data, callback) {
+  $("#"+dom).load(url);
 }
 
 function removeTab() {
