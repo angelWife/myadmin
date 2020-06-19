@@ -2,88 +2,72 @@
 <html lang="zh-cmn-Hans">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
-  <link rel="stylesheet" href="../dist/layui/css/layui.css">
-  <link rel="stylesheet" href="../dist/bootstrap4/css/bootstrap.css">
-  <link rel="stylesheet" href="../css/common.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../dist/fonts/iconfont.css">
-  <script src="../js/jquery-2.1.1.js"></script>
-  <script src="../dist/layui/layui.js"></script>
-  <script src="../js/common.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link rel="stylesheet" href="../dist/layui/css/layui.css" />
+    <link rel="stylesheet" href="../dist/bootstrap4/css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../dist/fonts/iconfont.css" />
+    <script src="../js/jquery-2.1.1.js"></script>
+    <script src="../dist/layui/layui.js"></script>
+    <script src="../js/common.js"></script>
 </head>
 
 <body>
-  <div class="container row">
-    <div class="m_left" id="body_left">
-      <div class="logo">
-        <span>Admin</span>
-      </div>
-      <div class="menuBox" id="menuBox">
-        <dl class="menuItem">
-          <dt>
-            <a class="glyphicon glyphicon-user">
-              <text>客户管理</text>
-            </a>
-            <i class="glyphicon glyphicon-triangle-bottom"></i>
-          </dt>
-          <dd>
-            <a href="javascripr:;" data-src="html/list.html" data-name="人员管理">人员管理</a>
-            <a href="javascripr:;" data-src="html/form.html" data-name="仓管管理">新增人员</a>
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <a class="glyphicon glyphicon-th-large" data-src="" data-name="客户设置">客户设置</a>
-          </dt>
-        </dl>
-      </div>
+    <div class="container row row_col">
+        <div class="header row">
+            <div class="logo">
+                <span>Admin</span>
+                <i class="glyphicon glyphicon-indent-right"></i>
+            </div>
+            <div class="header_right col" id="head_right">
+                <div class="head row">
+                    <div class="headBar">
+                        <a href="javascript:;" class="iconfont icon-icon">系统管理</a>
+                        <a href="javascript:;" class="iconfont icon-kuozhangongneng">扩展功能</a>
+                        <a href="javascript:;" class="iconfont icon-B-fuwudianyewuliushui">业务流水</a>
+                    </div>
+                    <div class="col-md">
+                        <ul class="headMenu" id="headNav">
+                            <li>
+                                <a href="javascript:;" title="通知" class="iconfont icon-notice"></a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" title="退出" class="iconfont icon-exit"></a>
+                            </li>
+                            <li class="more">
+                                <a href="javascript:;" class="glyphicon glyphicon-triangle-bottom">亡命天涯</a>
+                                <div class="childNav">
+                                    <a>修改资料</a>
+                                    <a>个人信息</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col main_container row">
+            <div class="menuBox"></div>
+            <div class="body_main col">
+                <div class="treeBox">
+                    <div class="treeList">
+                        <div class="treeMain" id="headTree">
+                            <a class="item iconfont icon-index active">仪表盘</a>
+                            <a class="item">
+                                用户管理
+                                <i class="iconfont icon-close-x"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="mainIframe"></div>
+            </div>
+        </div>
     </div>
-    <div class="m_right col" id="body_right">
-      <div class="head row">
-        <div class="menuClick" id="menuClick">
-          <i class="glyphicon glyphicon-indent-right"></i>
-        </div>
-        <div class="headBar">
-          <a href="javascript:;">营销管理</a>
-          <a href="javascript:;">商铺管理</a>
-          <a href="javascript:;">财务管理</a>
-          <a href="javascript:;">统计</a>
-        </div>
-        <div class="col-md">
-          <ul class="headMenu" id="headNav">
-            <li>
-              <a href="javascript:;" title="通知" class="iconfont icon-notice"></a>
-            </li>
-            <li>
-              <a href="javascript:;" title="退出" class="iconfont icon-exit"></a>
-            </li>
-            <li class="more">
-              <a href="javascript:;" class="glyphicon glyphicon-triangle-bottom">亡命天涯</a>
-              <div class="childNav">
-                <a>修改资料</a>
-                <a>个人信息</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="treeBox">
-        <div id="navHome" class="active home glyphicon glyphicon-home" title="首页"></div>
-        <div class="treeList">
-          <div class="treeMain" id="headTree">
-          </div>
-        </div>
-        <div class="closeAll glyphicon glyphicon-off"></div>
-      </div>
-      <div class="main">
-        <div id="mainIframe"></div>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 $(function() {
   //加载首页
-  loadHtml('mainIframe');
+//   loadHtml('mainIframe');
 
   // 菜单缩小
   $("#menuClick").on("click", function() {

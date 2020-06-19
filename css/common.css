@@ -27,6 +27,20 @@ button i {
 .table thead th {
   border-width: 1px;
 }
+.row {
+  margin: 0;
+  padding: 0;
+}
+.row.row_col {
+  -webkit-box-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.row.row_row {
+  -webkit-box-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
 /*通用调整*/
 .container {
   margin: 0;
@@ -34,39 +48,132 @@ button i {
   height: 100% !important;
   width: 100% !important;
   max-width: 100% !important;
+  background: #f5f5f5;
   overflow: hidden;
 }
-.container .row {
-  margin: 0;
-  padding: 0;
+.container .header {
+  background: #1951be;
 }
-.container .m_left {
+.container .header .logo {
   width: 240px;
-  height: 100%;
-  background: #222;
-}
-.container .m_left .logo {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   color: #ffffff;
   font-size: 16px;
   font-weight: 600;
 }
-.container .m_left .menuBox {
+.container .header .header_right {
+  padding: 0 !important;
+}
+.container .header .head {
+  height: 50px;
+}
+.container .header .head .menuClick {
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.container .header .head .menuClick i {
+  color: #ffffff;
+}
+.container .header .head .menuClick:hover i {
+  color: #ffffff;
+}
+.container .header .head .headBar {
+  float: left;
+  overflow: hidden;
+}
+.container .header .head .headBar a {
+  display: inline-block;
+  height: 50px;
+  line-height: 48px;
+  padding: 0 20px;
+  font-size: 15px;
+  color: #ffffff;
+}
+.container .header .head .headBar a::before {
+  margin-right: 5px;
+}
+.container .header .head .headBar a.active {
+  background: rgba(0, 0, 0, 0.1);
+  color: #f5f5f5;
+}
+.container .header .head .headBar a:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #f5f5f5;
+}
+.container .header .head .headMenu {
+  float: right;
+  margin: 0;
+}
+.container .header .head .headMenu li {
+  float: left;
+}
+.container .header .head .headMenu li > a {
+  display: inline-block;
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+  color: #ffffff;
+}
+.container .header .head .headMenu li > a:hover {
+  color: #f5f5f5;
+  background: rgba(0, 0, 0, 0.1);
+}
+.container .header .head .headMenu li.more {
+  position: relative;
+  padding: 0;
+}
+.container .header .head .headMenu li.more > a {
+  width: auto;
+  line-height: 46px;
+  padding: 0 40px 0 20px;
+}
+.container .header .head .headMenu li.more > a::before {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 12px;
+}
+.container .header .head .headMenu li.more > div {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 150px;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  top: 50px;
+  right: 0;
+  padding: 5px;
+}
+.container .header .head .headMenu li.more > div a {
+  display: block;
+  line-height: 30px;
+  padding: 0 20px;
+}
+.container .header .head .headMenu li.more > div a:hover {
+  color: #FF4400;
+}
+.container .menuBox {
   min-height: 600px;
   overflow-y: auto;
+  width: 240px;
+  height: 100%;
+  background: #ffffff;
 }
-.container .m_left .menuBox dl {
+.container .menuBox dl {
   font-size: 14px;
   margin: 0;
 }
-.container .m_left .menuBox dt {
+.container .menuBox dt {
   position: relative;
 }
-.container .m_left .menuBox dt a {
+.container .menuBox dt a {
   color: #d6d6d6;
   display: block;
   height: 40px;
@@ -75,18 +182,18 @@ button i {
   padding-left: 37px;
   overflow: hidden;
 }
-.container .m_left .menuBox dt a:hover {
+.container .menuBox dt a:hover {
   border-color: #FF4400;
   color: #ffffff;
 }
-.container .m_left .menuBox dt a::before {
+.container .menuBox dt a::before {
   position: absolute;
   line-height: 40px;
   height: 100%;
   left: 10px;
   margin-right: 10px;
 }
-.container .m_left .menuBox dt i {
+.container .menuBox dt i {
   position: absolute !important;
   cursor: pointer;
   height: 40px;
@@ -95,188 +202,105 @@ button i {
   right: 20px;
   top: 0;
   color: #ffffff;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
   transition: all 0.3s linear 0s;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
   transform: rotate(0deg);
 }
-.container .m_left .menuBox dt i.rotate {
+.container .menuBox dt i.rotate {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-.container .m_left .menuBox dt.active a {
+.container .menuBox dt.active a {
   color: #fff;
   background: #FF4400;
   border-color: #FF4400;
 }
-.container .m_left .menuBox dd {
+.container .menuBox dd {
   margin: 0;
   display: none;
   background: #333333;
   padding: 6px 0;
 }
-.container .m_left .menuBox dd a {
+.container .menuBox dd a {
   display: block;
   color: #d6d6d6;
   line-height: 40px;
   padding-left: 39px;
 }
-.container .m_left .menuBox dd a:hover {
+.container .menuBox dd a:hover {
   color: #ffffff;
   text-decoration: none;
 }
-.container .m_left .menuBox dd a.active {
+.container .menuBox dd a.active {
   color: #fff;
   background: #FF4400;
 }
-.container .showIcon .menuBox {
+.container .body_main {
+  padding: 0 !important;
+}
+.container .treeBox {
+  height: 40px;
+  border-bottom: 1px solid #e6e6e6;
   overflow: hidden;
+  position: relative;
 }
-.container .m_right {
-  padding: 0;
-  margin: 0;
+.container .treeBox .treeList {
+  height: 40px;
 }
-.container .m_right .head {
-  height: 50px;
-  background: #f5f5f5;
+.container .treeBox .treeList .treeMain {
+  height: 100%;
 }
-.container .m_right .head .menuClick {
-  width: 50px;
-  line-height: 50px;
-  text-align: center;
+.container .treeBox .treeList .treeMain a {
+  float: left;
+  font-size: 13px;
+  padding: 2px 16px 2px 10px;
+  margin: 6px 0 6px 6px;
+  border: 1px solid #e4e4e4;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 0 5px #e6e6e6;
+  color: #23508e;
+  width: 100px;
+  line-height: 22px;
+  position: relative;
+}
+.container .treeBox .treeList .treeMain a .icon-close-x {
+  position: absolute;
+  right: 5px;
+  font-size: 12px;
   cursor: pointer;
 }
-.container .m_right .head .menuClick i {
-  color: #999999;
-}
-.container .m_right .head .menuClick:hover i {
-  color: #0099ff;
-}
-.container .m_right .head .headBar {
-  float: left;
-  overflow: hidden;
-  margin-left: 50px;
-}
-.container .m_right .head .headBar a {
-  display: inline-block;
-  height: 50px;
-  line-height: 48px;
-  padding: 0 20px;
-  font-size: 16px;
-  color: #666666;
-  border-top: 2px solid #f5f5f5;
-}
-.container .m_right .head .headBar a.active {
-  border-color: #FF4400;
-  color: #FF4400;
-}
-.container .m_right .head .headBar a:hover {
-  border-color: #FF4400;
-}
-.container .m_right .head .headMenu {
-  float: right;
-}
-.container .m_right .head .headMenu li {
-  float: left;
-}
-.container .m_right .head .headMenu li > a {
-  display: inline-block;
-  line-height: 50px;
-  width: 50px;
-  text-align: center;
-  color: #666666;
-}
-.container .m_right .head .headMenu li > a:hover {
-  color: #FF4400;
-}
-.container .m_right .head .headMenu li.more {
-  position: relative;
-  padding: 0 20px;
-}
-.container .m_right .head .headMenu li.more > a {
-  width: auto;
-  padding-right: 20px;
-  line-height: 46px;
-}
-.container .m_right .head .headMenu li.more > a::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 12px;
-}
-.container .m_right .head .headMenu li.more > div {
-  position: absolute;
-  z-index: 10;
-  display: none;
-  width: 150px;
-  background: #ffffff;
-  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  top: 50px;
-  right: 0;
-  padding: 5px;
-}
-.container .m_right .head .headMenu li.more > div a {
-  display: block;
-  line-height: 30px;
-  padding: 0 20px;
-}
-.container .m_right .head .headMenu li.more > div a:hover {
-  color: #FF4400;
-}
-.container .m_right .treeBox {
-  height: 40px;
-  border: 1px solid #e6e6e6;
-  overflow: hidden;
-  -o-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
-.container .m_right .treeBox .treeList {
-  position: absolute;
-  width: calc(100% - 82px);
-  left: 40px;
-  top: 0px;
-  height: 40px;
-}
-.container .m_right .treeBox .treeList .treeMain {
-  height: 100%;
-  position: absolute;
-  left: 0;
-  overflow: hidden;
-}
-.container .m_right .treeBox .treeList .treeMain a {
-  float: left;
-  height: 100%;
-  line-height: 36px;
-  padding: 0 20px 0 10px;
-  box-sizing: border-box;
-  width: 100px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  position: relative;
-  text-align: center;
-  border-top: 2px solid #ffffff;
-  border-right: 1px solid #e6e6e6;
-  color: #666666;
-}
-.container .m_right .treeBox .treeList .treeMain a i {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  color: #999999;
-  line-height: 20px;
-  font-style: normal;
-  right: 3px;
-  font-size: 12px;
-  top: 8px;
-}
-.container .m_right .treeBox .treeList .treeMain a i:hover {
-  color: #FF4400;
+.container .treeBox .treeList .treeMain a .icon-close-x:hover {
+  color: #FF0000;
   font-weight: 600;
 }
-.container .m_right .treeBox .treeList .treeMain a.active {
-  border-top-color: #3a6b99;
+.container .treeBox .treeList .treeMain a.active {
+  background-color: #1e5edb;
+  color: #ffffff;
 }
-.container .m_right .treeBox .home {
+.container .treeBox .treeList .treeMain a.active .icon-close-x {
+  color: #ffffff;
+  opacity: 0.8;
+}
+.container .treeBox .treeList .treeMain a.active .icon-close-x:hover {
+  opacity: 1;
+  font-weight: 600;
+}
+.container .treeBox .treeList .treeMain a::before {
+  margin-right: 5px;
+  font-size: 14px;
+}
+.container .treeBox .home {
   width: 40px;
   line-height: 36px;
   text-align: center;
@@ -289,13 +313,13 @@ button i {
   top: 0;
   left: 0;
 }
-.container .m_right .treeBox .home:hover {
+.container .treeBox .home:hover {
   color: #FF0000;
 }
-.container .m_right .treeBox .home.active {
+.container .treeBox .home.active {
   border-top-color: #3a6b99;
 }
-.container .m_right .treeBox .closeAll {
+.container .treeBox .closeAll {
   width: 40px;
   line-height: 38px;
   text-align: center;
@@ -307,13 +331,11 @@ button i {
   top: 0;
   right: 0;
 }
-.container .m_right .treeBox .closeAll:hover {
+.container .treeBox .closeAll:hover {
   color: #FF0000;
 }
-.container .m_right .main {
-  height: calc(100vh - 90px);
+.container .showIcon .menuBox {
   overflow: hidden;
-  overflow-y: scroll;
 }
 .topOper {
   margin-top: 15px !important;
